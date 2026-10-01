@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+}
+
+header{
+    padding: 1em;
+    text-align: center;
+    align-content: center;
+}
+
+#grid{
+    display: grid; /* si no defino el template, la grilla va a tener una sola columna y tantas filas*/
+    gap: 1em;
+}
+
+#logo{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 4em;
+    color: rgb(6, 113, 184);
+}
+
+h1{
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
+#grid img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+#grid article{
+    overflow: hidden;
+}
+
+article{
+    position: relative;
+}
+
+article h2{
+    position: absolute;
+    top: 1em;
+    right: 0;
+    font-weight: normal;
+    background-color: rgba(255, 255, 255, 0.425);
+    padding: 0.5em;
+    border-radius: 2px;
+    font-size: 1em;
+}
+
+article p{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(5, 34, 112, 0.527);
+    color: white;
+    font-size: 0.8em;
+    padding: 0.7em;
+}
+
+/* TABLET */
+
+@media all and (min-width:768px){
+
+    #grid{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    header, #art3{
+        grid-column: span 2;
+    }
+
+    article h1{
+        font-size: 1.3em;
+    }
+
+}
+
+/* COMPU */
+
+@media all and (min-width:1200px){
+
+    #grid{
+        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-rows: 1fr 1fr 1fr 2fr;
+        height: 100vh;
+        gap: 1.3em;
+    }
+
+    header{
+        grid-column: span 1;
+    }
+
+    #art1, #art2{
+        grid-row: span 2;
+    }
+
+    #art3{
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+
+    #art4{
+        grid-column: span 2;
+        grid-row: span 2;       
+    }
+
+    article p{
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    article:hover p{
+        opacity: 1;
+    }
+
+}
